@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* ----------------------------------------------------------------------------------------- */
+
+/* font #7251b5 , bubbles #B185DB , bg #DEC9E9 */
+
+:root {
+    --MainColor : #7251b5;
+    --BubblesColor : #B185DB;
+    --BgColor : #DEC9E9;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-image: url('../public/wallpaper01.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#main {
+    margin-top: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+    letter-spacing: 0.05rem;
+    color: var(--MainColor);
+    font-size: 4rem;
+    margin-bottom: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .app , form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
 }
+*/
+
+.inputtext {
+    border: 0.5px solid var(--MainColor);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    /* font-size: 1em; */
+}
+
+.form-control:focus {
+    outline: 0;
+    border-color: var(--MainColor);
+    box-shadow: 0 0 0 .25rem var(--BubblesColor);
+}
+
+div .btn-primary {
+    background-color: var(--MainColor) !important;
+    letter-spacing: 0.05rem;
+    border-radius: 2rem;
+    border: 0;
+    transition: 0.3s ease-in-out;
+}
+
+div .btn-primary:hover {
+    background-color: #462f74;
+}
+
+form .form-label {
+    font-size: 1.5rem;
+}
+
+.result {
+    border-radius: 2rem;
+    width: fit-content;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+}
+
+.chartjs-render-monitor {
+    width: 30rem !important;
+    height: 15rem !important;
+}
+
+@media (max-width:1023px) {
+    body {
+        background-image: url('../public/phoneBg.svg');
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    form .form-label {
+        font-size: 1rem;
+    }
+
+    .chartjs-render-monitor {
+        width: 20rem !important;
+        height: 10rem !important;
+    }
+
+    /* .form-label {
+        font-size: 100rem;
+    } */
+}
+
+/*
+button {
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #7251b5;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all .3s ease;
+}
+
+button:hover {
+    background-color: #462f74;
+}
+
+.result {
+    padding-top: 20px;
+} */
