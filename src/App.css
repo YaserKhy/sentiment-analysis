@@ -61,7 +61,12 @@ div .btn-primary {
 }
 
 div .btn-primary:hover {
-    background-color: #462f74;
+    background-color: #462f74 !important;
+}
+
+div .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    background-color: var(--MainColor) !important;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
 }
 
 form .form-label {
@@ -70,17 +75,12 @@ form .form-label {
 
 .result {
     border-radius: 2rem;
-    width: fit-content;
+    width: 30rem;
     padding: 0.5rem;
     margin-top: 2rem;
     background: rgba(255, 255, 255, 0.68);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.1px);
-}
-
-.chartjs-render-monitor {
-    width: 30rem !important;
-    height: 15rem !important;
 }
 
 @media (max-width:1023px) {
@@ -96,10 +96,14 @@ form .form-label {
         font-size: 1rem;
     }
 
-    .chartjs-render-monitor {
+    .result {
+        width: 20rem;
+    }
+
+    /* .chartjs-render-monitor {
         width: 20rem !important;
         height: 10rem !important;
-    }
+    } */
 
     /* .form-label {
         font-size: 100rem;

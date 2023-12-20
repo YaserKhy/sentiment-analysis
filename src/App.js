@@ -7,7 +7,8 @@ export default function App() {
   const [text, setText] = useState('')                   // User Input
   const [analysis, setAnalysis] = useState(false)        // Analysis Trigger
   const [result, setResult] = useState('')               // Result Taken from API
-  const [showResult, setShowResult] = useState(false)   // Show or Hide Result
+  const [showResult, setShowResult] = useState(false)    // Show or Hide Result
+
   return (
     <div className='container text-center' id='main'>
       <div className='row justify-content-center'>
@@ -17,7 +18,7 @@ export default function App() {
       </div>
       <div className='row justify-content-center'>
         <div className='col-auto'>
-          <Form text={text} setText={setText} setAnalysis={setAnalysis} />
+          <Form text={text} setText={setText} setAnalysis={setAnalysis}/>
         </div>
       </div>
       <div className='row justify-content-center'>

@@ -40,13 +40,13 @@ export default function TheForm({ text, setText, setAnalysis }) {
             <form onSubmit={performAnalysis}>
                 <div className='row justify-content-center'>
                     <div className='col-auto text-center'>
-                        <label className='form-label'>Enter a text to perform sentiment analysis.</label>
+                        <label className='form-label'>Type something to start the sentiment analysis.</label>
                     </div>
                 </div>
 
                 <div className='row justify-content-center'>
                     <div className={`col-${numCols} text-center`}>
-                        <input type='text' className='inputtext form-control my-2' placeholder='Enter the text' value={text} onChange={handleChange}></input>
+                        <input type='text' className='inputtext form-control my-2' placeholder='Share your thoughts...' value={text} onChange={handleChange}></input>
                     </div>
                 </div>
 
