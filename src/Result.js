@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { MDBContainer } from "mdbreact";
-import { HorizontalBar } from "react-chartjs-2";
+import { Chart as ChartJS } from 'chart.js/auto';
+import { Bar } from "react-chartjs-2";
 
 export default function Result({ text, analysis, setAnalysis, result, setResult, showResult, setShowResult }) {
 
@@ -51,22 +51,19 @@ export default function Result({ text, analysis, setAnalysis, result, setResult,
     };
 
     const options = {
-        responsive: true,
+        indexAxis: 'y',
+        responsive:true,
         title: {
             text: 'Sentiment Analysis Result',
             display: true,
             fontSize: 16,
-            color:'red'
+            color: 'red'
         }
     };
 
-    return (
-        showResult && (
-            <div className='result'>
-                <MDBContainer>
-                    <HorizontalBar data={data} options={options} />
-                </MDBContainer>
-            </div>
-        )
+    return showResult && (
+        <div className='result'>
+            <Bar data={data} options={options} />
+        </div>
     );
 }

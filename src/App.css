@@ -75,7 +75,7 @@ form .form-label {
 
 .result {
     border-radius: 2rem;
-    width: 30rem;
+    width: 31rem;
     padding: 0.5rem;
     margin-top: 2rem;
     background: rgba(255, 255, 255, 0.68);
@@ -99,11 +99,6 @@ form .form-label {
     .result {
         width: 20rem;
     }
-
-    /* .chartjs-render-monitor {
-        width: 20rem !important;
-        height: 10rem !important;
-    } */
 
     /* .form-label {
         font-size: 100rem;
