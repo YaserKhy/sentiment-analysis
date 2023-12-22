@@ -2,6 +2,7 @@ import './App.css';
 import Form from './Form.js'
 import Result from './Result.js'
 import React, { useState } from 'react'
+import {Stack} from 'react-bootstrap'
 
 export default function App() {
   const [text, setText] = useState('')                   // User Input
@@ -10,22 +11,10 @@ export default function App() {
   const [showResult, setShowResult] = useState(false)    // Show or Hide Result
 
   return (
-    <div className='container text-center' id='main'>
-      <div className='row justify-content-center'>
-        <div className='col-auto text-center'>
-          <h1 className='title fw-medium'>Sentiment Analysis</h1>
-        </div>
-      </div>
-      <div className='row justify-content-center'>
-        <div className='col-auto'>
-          <Form text={text} setText={setText} setAnalysis={setAnalysis}/>
-        </div>
-      </div>
-      <div className='row justify-content-center'>
-        <div className='col-auto'>
-          <Result text={text} analysis={analysis} setAnalysis={setAnalysis} result={result} setResult={setResult} showResult={showResult} setShowResult={setShowResult} />
-        </div>
-      </div>
-    </div>
+    <Stack className='mt-4' gap={3}>
+      <h1 className='mt-5 title text-center'>Sentiment Analysis</h1>
+      <Form text={text} setText={setText} setAnalysis={setAnalysis}/>
+      <Result text={text} analysis={analysis} setAnalysis={setAnalysis} result={result} setResult={setResult} showResult={showResult} setShowResult={setShowResult} />
+    </Stack>
   )
 }

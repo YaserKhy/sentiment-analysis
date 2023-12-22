@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-/* ----------------------------------------------------------------------------------------- */
-
-/* font #7251b5 , bubbles #B185DB , bg #DEC9E9 */
+/* -----------------------------------------------------------------------------------------  */
+/* !important was used to override some default styles*/
 
 :root {
     --MainColor : #7251b5;
@@ -17,35 +16,21 @@ body {
     background-image: url('../public/wallpaper01.svg');
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-#main {
-    margin-top: 4rem;
+    overflow-x: hidden;
 }
 
 .title {
     letter-spacing: 0.05rem;
     color: var(--MainColor);
     font-size: 4rem;
-    margin-bottom: 2rem;
 }
 
-/* .app , form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0;
-}
-*/
-
-.inputtext {
+/* Input Field */
+.form-control {
     border: 0.5px solid var(--MainColor);
     border-radius: 1rem;
     padding: 0.8rem;
-    /* font-size: 1em; */
 }
-
 .form-control:focus {
     outline: 0;
     border-color: var(--MainColor);
@@ -54,25 +39,25 @@ body {
 
 div .btn-primary {
     background-color: var(--MainColor) !important;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.1rem;
     border-radius: 2rem;
     border: 0;
     transition: 0.3s ease-in-out;
 }
-
 div .btn-primary:hover {
     background-color: #462f74 !important;
 }
-
 div .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
     background-color: var(--MainColor) !important;
     box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
 }
 
+/* Input Field Label */
 form .form-label {
     font-size: 1.5rem;
 }
 
+/* Div Contains the Chart */
 .result {
     border-radius: 2rem;
     width: 31rem;
@@ -83,45 +68,29 @@ form .form-label {
     backdrop-filter: blur(6.1px);
 }
 
+/* Override the Valid State Style */
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: var(--MainColor) !important;
+    padding-right: unset;
+    background-image: none;
+}
+.form-control.is-valid:focus, .was-validated .form-control:valid:focus {
+    box-shadow: 0 0 0 .25rem var(--BubblesColor);
+}
+
+.modal.show .modal-dialog {
+    justify-content: center;
+}
+
+/* Border Radius of the Modal */
+.modal-dialog .modal-content {
+    border-radius: 3rem !important;
+}
+
 @media (max-width:1023px) {
-    body {
-        background-image: url('../public/phoneBg.svg');
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    form .form-label {
-        font-size: 1rem;
-    }
-
-    .result {
-        width: 20rem;
-    }
-
-    /* .form-label {
-        font-size: 100rem;
-    } */
+    body { background-image: url('../public/phoneBg.svg'); }
+    .title { font-size: 2rem; }
+    form .form-label { font-size: 1rem; }
+    .result { width: 20rem; }
+    .modal-dialog .modal-content { width: 23rem; }
 }
-
-/*
-button {
-    padding: 10px 30px;
-    border-radius: 50px;
-    border: 0;
-    background-color: #7251b5;
-    color: white;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-size: 15px;
-    transition: all .3s ease;
-}
-
-button:hover {
-    background-color: #462f74;
-}
-
-.result {
-    padding-top: 20px;
-} */

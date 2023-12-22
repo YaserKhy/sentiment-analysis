@@ -7,7 +7,7 @@ export default function Result({ text, analysis, setAnalysis, result, setResult,
     async function query(data) {
         const BASEURL = 'https://api-inference.huggingface.co/models/cardiffnlp/twitter-xlm-roberta-base-sentiment'
         const paramdict = {
-            headers: { Authorization: "Bearer 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" },
+            headers: { Authorization: "Bearer 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" },
             method: "POST",
             body: data,
         }
@@ -53,16 +53,10 @@ export default function Result({ text, analysis, setAnalysis, result, setResult,
     const options = {
         indexAxis: 'y',
         responsive:true,
-        title: {
-            text: 'Sentiment Analysis Result',
-            display: true,
-            fontSize: 16,
-            color: 'red'
-        }
     };
 
     return showResult && (
-        <div className='result'>
+        <div className='result m-auto'>
             <Bar data={data} options={options} />
         </div>
     );
