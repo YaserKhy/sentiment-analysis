@@ -7,7 +7,7 @@ export default function Result({ text, analysis, setAnalysis, result, setResult,
     async function query(data) {
         const BASEURL = 'https://api-inference.huggingface.co/models/cardiffnlp/twitter-xlm-roberta-base-sentiment'
         const paramdict = {
-            headers: { Authorization: "Bearer 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" },
+            headers: { Authorization: `Bearer ${process.env.REACT_APP_APIKEY}` },
             method: "POST",
             body: data,
         }
@@ -35,7 +35,7 @@ export default function Result({ text, analysis, setAnalysis, result, setResult,
         }
     })
 
-    const ordered = ['Positive', 'Neutral', 'Negative']
+    const ordered = ['positive', 'neutral', 'negative']
 
     const data = {
         labels: ["Positive", "Neutral", "Negative",],
